@@ -1,6 +1,4 @@
-h1 {
-	font-size: 50px;
-}
+h1 {font-size: 50px;}
 
 .gamebutton {
 	border: solid red;
@@ -11,21 +9,13 @@ h1 {
 	position: relative;
 }
 
-#playbtn {
-	left: 44%;
-}
+#playbtn {left: 44%;}
 
-#blog {
-	left: 33%;
-}
+#blog {left: 33%;}
 
-#itch {
-	left: 36%;
-}
+#itch {left: 36%;}
 
-#cartrdge {
-	left: 39%;
-}
+#cartrdge {left: 39%;}
 
 .gamebutton:hover {
     background-color: #f44336;
@@ -51,13 +41,10 @@ li {
 }
 
 @keyframes down {
-	0% {
-		margin-top: 0;
-	}
 
-	100% {
-		margin-top: 48%;
-	}
+	0% {margin-top: 0;}
+
+	100% {margin-top: 48%;}
 }
 
 .godown {
@@ -72,8 +59,7 @@ li {
 	overflow: hidden;
 }
 
-#wordlist {
-	font-size: 25px;
+#wordlist {font-size: 25px;
 }
 
 .indword {
@@ -89,10 +75,6 @@ li {
 	font-size: 30px;
 }
 
-#scorebox, #reset {
-	text-align: right;
-}
+#scorebox, #reset {text-align: right;}
 
-#gameover {
-	display: none;
-}
+#gameover {display: none;}
