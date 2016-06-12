@@ -83,6 +83,7 @@ function matchedWord(typedWord) {
 	}
 }
 
+// bruh idk how this works
 (function deathCondition() {
 	if (wordlist.offsetTop >= 500) {
 		alert('hey');
