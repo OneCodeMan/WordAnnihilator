@@ -1,0 +1,1 @@
+var targets = [["hey", "sup", "nothing", "memories", "man", "more", "words", ], ["next", "level"]]; // array of words

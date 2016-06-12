@@ -1,7 +1,8 @@
 var word = ""; // what the user types
-var targets = [["hey", "sup", "nothing", "memories", "man", "more", "words", ], ["next", "level"]]; // array of words
 var wordTyped = document.getElementById("wordtyped"); // div where it shows what the user typed
 var wordlist = document.getElementById("wordlist"); // div where the array of words are displayed
+var scoretext = document.getElementById("scoretext");
+var score = 0;
 var arr = targets.shift();
 
 // sounds
@@ -29,9 +30,15 @@ document.body.addEventListener('keyup', function(e) {
 	}
 });
 
+function updateScore(word) {
+	score += word.length;
+	scoretext.innerHTML = score;
+}
+
 // this is the game loop
 function gameloop() {
 
+	scoretext.innerHTML = score; // initialize score to 0
 	displayWords(arr); // initially display all the words in the array
 
 	// listen for typing events
@@ -45,8 +52,10 @@ function gameloop() {
 		var index = arr.indexOf(word); 
 
 		if (index > -1) {
-			matchedWord(word);
+			matchedWord(word); // check if level is done or if all levels are done
 			destroySound.play();
+
+			updateScore(word); // update score
 
 			displayWords(arr); // then remove the existing array and display the new array.
 			word = ""; // reset user input
@@ -56,15 +65,14 @@ function gameloop() {
 	});
 }
 
-gameloop()
-
+// check for word matches
 function matchedWord(typedWord) {
 	arr.splice(arr.indexOf(typedWord), 1);
 
 	if (arr.length == 0) {
 
 		if (targets.length>0) {
-			arr = targets.shift(); // shift to next array
+			arr = targets.shift(); // shift to next array 
 			wordlist.className -= "godown"; // reset the going down effect
 			nextLevelSound.play();
 			setTimeout(function() {wordlist.className = "godown";}, 50); // adding it right away doesn't work
@@ -74,3 +82,11 @@ function matchedWord(typedWord) {
 		//win
 	}
 }
+
+(function deathCondition() {
+	if (wordlist.offsetTop >= 500) {
+		alert('hey');
+	}
+})();
+
+gameloop()
