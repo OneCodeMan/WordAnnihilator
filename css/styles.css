@@ -62,7 +62,7 @@ li {
 
 .godown {
 	animation-name: down;
-	animation-duration: 3s;
+	animation-duration: 30s;
 	animation-fill-mode: forwards;
 }
 

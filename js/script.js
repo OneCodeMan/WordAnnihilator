@@ -58,7 +58,7 @@ function gameloop() {
 
 		listposition = wordlist.getBoundingClientRect();
 		if (listposition.bottom >= 550) {
-			gameover(false);
+			gameloss();
 		}
 
 		word += String.fromCharCode(e.keyCode); // this is what the user types
@@ -81,19 +81,24 @@ function gameloop() {
 	});
 }
 
-function gameover(won) {
+function gamewon() {
 
 	winGameSound.play();
+	condition.innerHTML = "YOU WON!";
 	scoreBox.style.display = "none";
 	wordlist.style.display= "none";
 	wordTyped.style.display = "none";
 	gameover.style.display = "inline";
+}
 
-	if (won) {
-		condition.innerHTML= "YOU WON";
-	} else {
-		condition.innerHTML= "YOU LOST, AW!";
-	}
+function gameloss() {
+
+	winGameSound.play();
+	condition.innerHTML = "YOU LOST, AW!";
+	scoreBox.style.display = "none";
+	wordlist.style.display= "none";
+	wordTyped.style.display = "none";
+	gameover.style.display = "inline";
 }
 
 // check for word matches
@@ -108,7 +113,7 @@ function matchedWord(typedWord) {
 			nextLevelSound.play();
 			setTimeout(function() {wordlist.className = "godown";}, 50); // adding it right away doesn't work
 		} else {
-			gameover(true);
+			gamewon();
 		}
 
 	} else {
@@ -116,7 +121,6 @@ function matchedWord(typedWord) {
 	}
 
 }// end of matchedWord()
-
 
 // click event
 playbutton.onclick = function() {
@@ -158,8 +162,6 @@ function checkScore(score) {
 	}
 }
 
-
 function gotoblog() { window.open("http://davecodes.tumblr.com"); }
 function gotoitch() { window.open("https://davecodes.itch.io"); }
 function gotocart() { window.open("https://cartrdge.com/developerdave"); }
-
