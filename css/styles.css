@@ -50,7 +50,6 @@ li {
 	padding: 15px;
 }
 
-
 @keyframes down {
 	0% {
 		margin-top: 0;
@@ -63,7 +62,7 @@ li {
 
 .godown {
 	animation-name: down;
-	animation-duration: 30s;
+	animation-duration: 3s;
 	animation-fill-mode: forwards;
 }
 
@@ -94,6 +93,6 @@ li {
 	text-align: right;
 }
 
-#gamewon {
+#gameover {
 	display: none;
 }

@@ -7,10 +7,10 @@ var playbutton = document.getElementById("playbtn");
 var playagainbutton = document.getElementById("playagain");
 var resettext = document.getElementById("reset");
 var intro = document.getElementById("intro");
-var gamewon = document.getElementById("gamewon");
+var gameover = document.getElementById("gameover");
+var condition = document.getElementById("condition");
 var score = 0;
 var arr = targets.shift();
-var scorechanged = false;
 
 // sounds
 var destroySound = new Audio('Explosion.wav');
@@ -56,6 +56,11 @@ function gameloop() {
 	// listen for typing events
 	document.body.addEventListener('keypress', function(e) {
 
+		listposition = wordlist.getBoundingClientRect();
+		if (listposition.bottom >= 550) {
+			gameover(false);
+		}
+
 		word += String.fromCharCode(e.keyCode); // this is what the user types
 		wordTyped.innerHTML = word; // show what the user is typing on the div
 
@@ -76,6 +81,21 @@ function gameloop() {
 	});
 }
 
+function gameover(won) {
+
+	winGameSound.play();
+	scoreBox.style.display = "none";
+	wordlist.style.display= "none";
+	wordTyped.style.display = "none";
+	gameover.style.display = "inline";
+
+	if (won) {
+		condition.innerHTML= "YOU WON";
+	} else {
+		condition.innerHTML= "YOU LOST, AW!";
+	}
+}
+
 // check for word matches
 function matchedWord(typedWord) {
 	arr.splice(arr.indexOf(typedWord), 1);
@@ -88,7 +108,7 @@ function matchedWord(typedWord) {
 			nextLevelSound.play();
 			setTimeout(function() {wordlist.className = "godown";}, 50); // adding it right away doesn't work
 		} else {
-			wongame();
+			gameover(true);
 		}
 
 	} else {
@@ -138,15 +158,6 @@ function checkScore(score) {
 	}
 }
 
-// game won
-function wongame() {
-
-	winGameSound.play();
-	scoreBox.style.display = "none";
-	wordlist.style.display= "none";
-	wordTyped.style.display = "none";
-	gamewon.style.display = "inline";
-}
 
 function gotoblog() { window.open("http://davecodes.tumblr.com"); }
 function gotoitch() { window.open("https://davecodes.itch.io"); }
