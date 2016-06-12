@@ -2,22 +2,37 @@ h1 {
 	font-size: 50px;
 }
 
-#playbtn {
+.gamebutton {
 	border: solid red;
 	text-decoration: none;
 	background-color: white;
 	padding: 10px 25px;
 	font-size: 30px;
 	position: relative;
+}
+
+#playbtn {
 	left: 44%;
 }
 
-#playbtn:hover {
+#blog {
+	left: 33%;
+}
+
+#itch {
+	left: 36%;
+}
+
+#cartrdge {
+	left: 39%;
+}
+
+.gamebutton:hover {
     background-color: #f44336;
     color: white;
 }
 
-h1, li, #playbtn {
+h1, li, .gamebutton {
 	text-align: center;
 	font-weight: bold;
 	font-family: 'VT323';
@@ -34,6 +49,7 @@ li {
 	border: dashed red;
 	padding: 15px;
 }
+
 
 @keyframes down {
 	0% {
@@ -76,4 +92,8 @@ li {
 
 #scorebox, #reset {
 	text-align: right;
+}
+
+#gamewon {
+	display: none;
 }

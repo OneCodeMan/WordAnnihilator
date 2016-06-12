@@ -25,9 +25,25 @@
 		</div><!-- end of row-->
 
 		<div class="row">
-			<button type="button" id="playbtn">Play!</button>
+			<button type="button" id="playbtn" class="gamebutton">Play!</button>
 		</div>
 	</div><!--end of intro-->
+
+	<div id="gamewon">
+		<div class="row">
+			<h1>YOU WON!!</h1>
+		</div>
+
+		<div class="row">
+			<h1>THANK YOU SO MUCH FOR PLAYING :)</h1>
+		</div>
+
+		<div class="row">
+			<button onclick="gotoblog()" type="button" id="blog" class="gamebutton">Blog</button>
+			<button onclick="gotoitch()" type="button" id="itch" class="gamebutton">Itch</button>
+			<button onclick="gotocart()" type="button" id="cartrdge" class="gamebutton">Cartrdge</button>
+		</div>
+	</div>
 
 	<div id="scorebox">
 		<h1 id="scoretext"></h1>
@@ -38,7 +54,9 @@
 
 </div>
 
+
 <div id="wordtyped"></div>
+
 
 <script src="js/targets.js"></script>
 <script src="js/script.js"></script>
