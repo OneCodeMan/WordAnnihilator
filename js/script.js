@@ -83,9 +83,10 @@ function matchedWord(typedWord) {
 	}
 }
 
-// bruh idk how this works
+// bruh idk to make this work
 (function deathCondition() {
-	if (wordlist.offsetTop >= 500) {
+	var elOffset = wordlist.offsetTop;
+	if (elOffset >= 300) {
 		alert('hey');
 	}
 })();

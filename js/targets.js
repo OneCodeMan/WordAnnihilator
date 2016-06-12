@@ -1,1 +1,23 @@
-var targets = [["hey", "sup", "nothing", "memories", "man", "more", "words", ], ["next", "level"]]; // array of words
+var targets = [
+["age", "add", "abs", "goy", "huh", "gig", "hog", "ten", "bum", "had", "wed", "waw"], 
+["net", "gut", "jot", "jew", "led", "jin", "max", "may", "lug", "sin", "row", "rin"],
+["rue", "sis", "sox", "sum", "rin", "ria", "rex", "rep", "tun", "uke", "sri", "pal"],
+["war", "wax", "wop", "vow", "yum", "zit", "yom", "yeh", "zzz", "zoo", "mix", "mic"],
+["aNt", "WOn", "Why", "EgG", "see"],
+["abba", "agar", "bade", "baht", "band", "bank", "cham", "chat", "cent", "come", "comp"],
+["coil", "days", "darb", "cure", "cuds", "deck", "eves", "fang", "fare", "exam", "gamy"],
+["aboma", "aboil", "about", "anime", "bland", "blunt", "chats", "claim", "clued", "congo"],
+["cRAbs", "dARED", "DIVoT", "DUElS"],
+["actual", "afghan", "adjoin", "admits", "amidst", "assign", "boucle", "brawns"],
+["cHarge", "CLUnKs", "CLOUDY", "EXCeEd", "exerts"],
+["evoker", "exoNic", "FATHeR", "abluent", "beClown", "CLOSets"],
+["closure", "codeine", "coldest", "corRupt", "createD", "DONator"], 
+["dominos", "dueller", "fishery", "fireman", "fireBuG", "forgeRs"],
+["gutless", "gurgled", "gundogs", "happing", "hamburg", "happens"], 
+["mezuzoth", "abruptly", "academic", "reposits", "retasted", "reversal"], 
+["rifleman", "absorbing", "affusions", "zebrawood", "zeitgeber", "yellowest"], 
+["zoosperms", "workpiece", "vistaless", "unthrones", "truanting"],
+["aerologies", "alchemists", "breathless", "catalyzers", "cataloguers"],
+["chubbiness", "circulates", "coneflower", "criminates", "mainframes"],
+["blackjacks", "jackknifed", "kickboxing"]
+]; // array of words

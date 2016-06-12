@@ -15,7 +15,7 @@
 }
 
 .container {
-	border: solid;
+	border-bottom: solid red;
 	height: 550px;
 	overflow: hidden;
 }
