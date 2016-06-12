@@ -36,6 +36,8 @@ document.body.addEventListener('keyup', function(e) {
 function updateScore(word) {
 	score += word.length;
 	scoretext.innerHTML = score;
+
+	checkScore(score);
 }
 
 // this is the game loop
@@ -83,12 +85,19 @@ function matchedWord(typedWord) {
 		}
 
 	} else {
-		//win
+		
 	}
 }
 
 
 playbutton.onclick = function() {
+	wordlist.className = "godown"
 	intro.style.display = 'none';
 	gameloop();
+}
+
+function checkScore(score) {
+	if (score >= 20) {
+		alert('yo');
+	}
 }
