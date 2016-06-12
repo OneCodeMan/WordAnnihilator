@@ -2,6 +2,9 @@ var word = ""; // what the user types
 var wordTyped = document.getElementById("wordtyped"); // div where it shows what the user typed
 var wordlist = document.getElementById("wordlist"); // div where the array of words are displayed
 var scoretext = document.getElementById("scoretext");
+var playbutton = document.getElementById("playbtn");
+var resettext = document.getElementById("reset");
+var intro = document.getElementById("intro");
 var score = 0;
 var arr = targets.shift();
 
@@ -38,6 +41,7 @@ function updateScore(word) {
 // this is the game loop
 function gameloop() {
 
+	resettext.innerHTML = "Press 'esc' to reset word";
 	scoretext.innerHTML = score; // initialize score to 0
 	displayWords(arr); // initially display all the words in the array
 
@@ -83,12 +87,8 @@ function matchedWord(typedWord) {
 	}
 }
 
-// bruh idk to make this work
-(function deathCondition() {
-	var elOffset = wordlist.offsetTop;
-	if (elOffset >= 300) {
-		alert('hey');
-	}
-})();
 
-gameloop()
+playbutton.onclick = function() {
+	intro.style.display = 'none';
+	gameloop();
+}

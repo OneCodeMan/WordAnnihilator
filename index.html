@@ -2,18 +2,42 @@
 <html>
 <head>
 	<title>Word Annihilator</title>
+	<link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
 
 <div class="container">
+
+	<div id="intro">
+		<div class="row">
+			<h1>WORD ANNIHILATOR</h1>
+		</div>
+		<div class="row">
+			<div class="col-sm-offset-3">
+				<ul>
+					<li>Type words before they reach the <span style="color:red;">red line</span>.</li>
+					<li>Press 'esc' to reset what you type.</li>
+					<li>Words are case-sensitive!</li>
+				</ul>
+			</div><!--end of col-->
+		</div><!-- end of row-->
+
+		<div class="row">
+			<button type="button" id="playbtn">Play!</button>
+		</div>
+	</div><!--end of intro-->
+
 	<div id="scorebox">
-	<h1 id="scoretext"></h1>
-	<h4 id="reset">Press 'esc' to reset word</h4></div>
+		<h1 id="scoretext"></h1>
+		<h4 id="reset"></h4>
+	</div>
+
 	<div id="wordlist" class="godown"></div>
 
 </div>
+
 <div id="wordtyped"></div>
 
 <script src="js/targets.js"></script>

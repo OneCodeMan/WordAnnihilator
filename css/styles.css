@@ -1,3 +1,40 @@
+h1 {
+	font-size: 50px;
+}
+
+#playbtn {
+	border: solid red;
+	text-decoration: none;
+	background-color: white;
+	padding: 10px 25px;
+	font-size: 30px;
+	position: relative;
+	left: 44%;
+}
+
+#playbtn:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+h1, li, #playbtn {
+	text-align: center;
+	font-weight: bold;
+	font-family: 'VT323';
+}
+
+li {
+	text-align: left;
+	font-size: 30px;
+}
+
+
+#intro {
+	margin-top: 100px;
+	border: dashed red;
+	padding: 15px;
+}
+
 @keyframes down {
 	0% {
 		margin-top: 0;

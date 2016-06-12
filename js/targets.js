@@ -19,5 +19,5 @@ var targets = [
 ["zoosperms", "workpiece", "vistaless", "unthrones", "truanting"],
 ["aerologies", "alchemists", "breathless", "catalyzers", "cataloguers"],
 ["chubbiness", "circulates", "coneflower", "criminates", "mainframes"],
-["blackjacks", "jackknifed", "kickboxing"]
+["blackjacks", "jackknifed", "kickboxing", "mastermind", "boggling"]
 ]; // array of words
