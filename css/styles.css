@@ -15,7 +15,6 @@
 }
 
 .container {
-	border: solid;
 	height: 550px;
 	overflow: hidden;
 }
@@ -29,4 +28,10 @@
 	border: solid;
 	border-radius: 50%;
 	padding: 20px;
+}
+
+#wordtyped {
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
 }

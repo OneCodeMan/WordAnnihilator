@@ -1,11 +1,12 @@
 var word = ""; // what the user types
-var targets = [["hey", "sup", "nothing", "memories", "man"], ["next", "level"]]; // array of words
+var targets = [["hey", "sup", "nothing", "memories", "man", "more", "words", ], ["next", "level"]]; // array of words
 var wordTyped = document.getElementById("wordtyped"); // div where it shows what the user typed
 var wordlist = document.getElementById("wordlist"); // div where the array of words are displayed
-var arrindex = 0;
+var arr = targets.shift();
 
 // sounds
 var destroySound = new Audio('Explosion.wav');
+var nextLevelSound = new Audio('NextLevel.wav');
 
 // display the words in a div called indword. erase the current wordlist, update it with the new wordlist.
 function displayWords(arr) {
@@ -29,9 +30,9 @@ document.body.addEventListener('keyup', function(e) {
 });
 
 // this is the game loop
-function gameloop(arrindex) {
+function gameloop() {
 
-	displayWords(targets[arrindex]); // initially display all the words in the array
+	displayWords(arr); // initially display all the words in the array
 
 	// listen for typing events
 	document.body.addEventListener('keypress', function(e) {
@@ -41,15 +42,13 @@ function gameloop(arrindex) {
 		console.log(word);
 
 		// this whole thing is to check if the word that the user typed is in the array targets
-		var index = targets[arrindex].indexOf(word); 
+		var index = arr.indexOf(word); 
 
 		if (index > -1) {
-			console.log("success");
+			matchedWord(word);
 			destroySound.play();
 
-			targets[arrindex].splice(index, 1); // if what the user types exists in targets, delete that from the array
-
-			displayWords(targets[arrindex]); // then remove the existing array and display the new array.
+			displayWords(arr); // then remove the existing array and display the new array.
 			word = ""; // reset user input
 			wordTyped.innerHTML = word;
 		}
@@ -57,4 +56,21 @@ function gameloop(arrindex) {
 	});
 }
 
-gameloop(arrindex);
+gameloop()
+
+function matchedWord(typedWord) {
+	arr.splice(arr.indexOf(typedWord), 1);
+
+	if (arr.length == 0) {
+
+		if (targets.length>0) {
+			arr = targets.shift(); // shift to next array
+			wordlist.className -= "godown"; // reset the going down effect
+			nextLevelSound.play();
+			setTimeout(function() {wordlist.className = "godown";}, 50); // adding it right away doesn't work
+		}
+
+	} else {
+		//win
+	}
+}
